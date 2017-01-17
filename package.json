@@ -1,0 +1,40 @@
+{
+  "name": "zoe-react-component",
+  "version": "0.0.1",
+  "description": "A reactjs component,build with antd",
+  "main": "./lib/index.js",
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/sea35/zoe-react-component.git"
+  },
+  "keywords": [
+    "nodejs"
+  ],
+  "author": "sea35",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/sea35/zoe-react-component/issues"
+  },
+  "homepage": "https://github.com/sea35/zoe-react-component#readme",
+  "dependencies": {
+    "antd": "^2.6.3",
+    "dva": "^1.2.1",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.21.0",
+    "babel-loader": "^6.2.10",
+    "babel-plugin-transform-object-assign": "^6.8.0",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "6.16.0",
+    "css-loader": "^0.26.1",
+    "less": "^2.7.2",
+    "less-loader": "^2.2.3",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.14.0"
+  }
+}
