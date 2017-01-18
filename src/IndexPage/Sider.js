@@ -4,7 +4,7 @@
 import React, { PropTypes } from 'react'
 import { Menu, Icon } from 'antd'
 import { Link } from 'dva/router'
-import styles from './IndexPage.css'
+import  './IndexPage.css'
 
 const getMenus = function (menuArray, parentPath,collapse) {
   parentPath = parentPath || '/'
@@ -20,7 +20,7 @@ const getMenus = function (menuArray, parentPath,collapse) {
         <Menu.Item key={item.key}>
           <Link to={parentPath + item.key}>
             {item.icon ? <Icon type={item.icon} /> : ''}
-            {!collapse && <span className={styles.nav_text}>{item.name}</span>}
+            {!collapse && <span className="nav_text">{item.name}</span>}
           </Link>
         </Menu.Item>
       )

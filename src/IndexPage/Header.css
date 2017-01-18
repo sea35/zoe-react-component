@@ -1,9 +1,9 @@
-.header{
+.zoe-react-component-header{
   width: 100%;
   height: 50px;
   background: #3399FF;
 }
-.logo{
+.zoe-react-component-logo{
   margin-left: 10px;
   text-align: center;
   line-height:60px;
@@ -12,16 +12,16 @@
   cursor: pointer;
   float:left;
 }
-.logo img{
+.zoe-react-component-logo img{
   height: 21px;
   width: 62px;
 
 }
-.menu {
+.zoe-react-component-menu {
   margin-left: 90px;
   width: 60%;
 }
-.menu li {
+.zoe-react-component-menu li {
   float:left;
   width: 120px;
   font-size: 12pt;

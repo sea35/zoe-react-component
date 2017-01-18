@@ -3,22 +3,22 @@
  */
 import React, { PropTypes } from 'react'
 import { Menu, Icon } from 'antd'
-import styles from './Header.css'
+import './Header.css'
 
 const SubMenu = Menu.SubMenu
 
-function Header({ location, logout }) {
+function Header({ location, logout ,config}) {
   function handleClickMenu(item) {
     if (item.key === 'logout') {
       logout()
     }
   }
   return (
-    <div className={styles.header}>
-      <div className={styles.logo} >
-        <img src="http://www.zysoft.com.cn/Skins/style/css/img/logo.png"></img>
+    <div className="zoe-react-component-header">
+      <div className="zoe-react-component-logo" >
+        <img src={config.logoSrc}></img>
       </div>
-      <div className={styles.menu}>
+      <div className="zoe-react-component-menu">
           <ul>
             <li>部署平台</li>
             <li>运维平台</li>

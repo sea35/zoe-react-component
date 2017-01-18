@@ -1,9 +1,14 @@
 import React, {Component} from 'react';
 import {Icon} from 'antd';
-import {Header, Sider, Bread, Footer} from "./component";
-import styles from './component/IndexPage.css';
+import {Header, Sider, Bread, Footer} from "./";
+import styles from './IndexPage.css';
 
-
+const configText ={
+    name: 'ZOE OPS',
+    footerText: 'ZoeNet 版权所有 © 2016 由 ZoeNet架构部支持',
+    logoSrc:"http://www.zysoft.com.cn/Skins/style/css/img/logo.png",
+    logoText:'ZOE OPS'
+};
 class IndexPage extends Component {
   constructor(props) {
     super(props);
@@ -20,24 +25,25 @@ class IndexPage extends Component {
 
   render() {
     const collapse = this.state.collapse;
+    const config = this.props.configText || {...configText};
     return (
-      <div className={styles.layout}>
-        <Header />
-        <div className={collapse ? [styles.layout_aside,styles.layout_aside_collapse].join(" ") : styles.layout_aside}>
-          <aside className={styles.layout_sider}>
+      <div className="zoe-react-component-layout">
+        <Header config={config}/>
+        <div className={collapse ? ["zoe-react-component-layout-aside","zoe-react-component-layout-aside-collapse"].join(" ") : "zoe-react-component-layout-aside"}>
+          <aside className="zoe-react-component-layout-sider">
             <Sider collapse={collapse} menu={this.props.menu} />
-            <div className={styles.aside_action} onClick={this.onCollapseChange.bind(this)}>
+            <div className="zoe-react-component-aside-action" onClick={this.onCollapseChange.bind(this)}>
               {collapse ? <Icon type="right" /> : <Icon type="left" />}
             </div>
           </aside>
-          <div className={styles.layout_main}>
-            <div className={styles.layout_container}>
+          <div className="zoe-react-component-layout-main">
+            <div className="zoe-react-component-layout-container">
             <Bread location={this.props.location} menu={this.props.menu}/>
-              <div className={styles.layout_content}>
+              <div className="zoe-react-component-layout-content">
                 {this.props.children}
               </div>
             </div>
-            <Footer/>
+            <Footer config={config}/>
           </div>
         </div>
       </div>

@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 import { Breadcrumb, Icon } from 'antd'
-import styles from './IndexPage.css'
+import './IndexPage.css'
 
 let pathSet = []
 const getPathSet = function (menuArray, parentPath,menu) {
@@ -16,9 +16,9 @@ const getPathSet = function (menuArray, parentPath,menu) {
     }
   })
 }
-getPathSet(menu)
 
-function Bread({ location }) {
+function Bread({ location,menu }) {
+    getPathSet(menu);
   let pathNames = []
   location.pathname.substr(1).split('/').map((item, key) => {
     if (key > 0) {
@@ -41,7 +41,7 @@ function Bread({ location }) {
   })
 
   return (
-    <div className={styles.bread}>
+    <div className="zoe-react-component-bread">
       <Breadcrumb>
         <Breadcrumb.Item href="#/"><Icon type="home" />
           <span>主页</span>
