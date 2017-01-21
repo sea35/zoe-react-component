@@ -3,7 +3,7 @@
  */
 import React, { PropTypes } from 'react'
 import { Menu, Icon } from 'antd'
-import { Link } from 'dva/router'
+import { Link } from 'react-router'
 import  './IndexPage.css'
 
 const getMenus = function (menuArray, parentPath,collapse) {
@@ -28,7 +28,7 @@ const getMenus = function (menuArray, parentPath,collapse) {
   })
 }
 
-function Sider({ location,collapse ,menu}) {
+function Sider({ collapse ,menu}) {
   return (
     <div>
       <Menu mode="inline" theme="dark" defaultSelectedKeys={['index']}>
