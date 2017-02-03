@@ -7,3 +7,7 @@ npm install zoe-react-component
 ```
 import {IndexPage} from "zoe-react-component";
 ```
+### demo
+```
+npm run startDemo 
+```
