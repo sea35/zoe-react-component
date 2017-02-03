@@ -1,0 +1,30 @@
+.zoe-react-component-header{
+  width: 100%;
+  height: 50px;
+  background: #3399FF;
+}
+.zoe-react-component-logo{
+  margin-left: 10px;
+  text-align: center;
+  line-height:60px;
+  height: 21px;
+  width: 62px;
+  cursor: pointer;
+  float:left;
+}
+.zoe-react-component-logo img{
+  height: 21px;
+  width: 62px;
+
+}
+.zoe-react-component-menu {
+  margin-left: 90px;
+  width: 60%;
+}
+.zoe-react-component-menu li {
+  float:left;
+  width: 120px;
+  font-size: 12pt;
+  line-height:50px;
+  color: #fff;
+}
