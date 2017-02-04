@@ -1,0 +1,44 @@
+{
+  "name": "zoe-react-component",
+  "version": "0.0.4",
+  "description": "A reactjs component,build with antd",
+  "main": "./lib/index.js",
+  "scripts": {
+    "test": "make test",
+    "babel": "babel ./src --out-dir ./lib",
+    "css": "cpx \"./src/**/*.css\" ./lib",
+    "release": "npm run babel && npm run css",
+    "start": "webpack-dev-server",
+    "demoBabel": "babel ./src --out-dir ./demo/src/component",
+    "cssBabel": "cpx \"./src/**/*.css\" ./demo/src/component",
+    "demo": "npm run demoBabel && npm run cssBabel",
+    "startDemo":"npm run demo && cd demo && npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/sea35/zoe-react-component.git"
+  },
+  "keywords": [
+    "nodejs"
+  ],
+  "author": "sea35",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/sea35/zoe-react-component/issues"
+  },
+  "homepage": "https://github.com/sea35/zoe-react-component#readme",
+  "dependencies": {
+    "antd": "^2.6.3",
+    "axios": "^0.15.3",
+    "classnames": "^2.2.5",
+    "dva": "^1.2.1",
+    "fastclick": "^1.0.6",
+    "react": "^15.4.2",
+    "react-dom": "^16.0.0-alpha",
+    "react-redux": "^4.4.0",
+    "react-router": "^3.0.2",
+    "redux": "^3.3.1",
+    "redux-thunk": "^2.0.1",
+    "url-loader": "^0.5.7"
+  }
+}

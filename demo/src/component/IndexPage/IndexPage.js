@@ -16,9 +16,7 @@ var _antd = require('antd');
 
 var _ = require('./');
 
-var _IndexPage = require('./IndexPage.css');
-
-var _IndexPage2 = _interopRequireDefault(_IndexPage);
+require('./IndexPage.css');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -44,8 +42,10 @@ var IndexPage = function (_Component) {
     var _this = _possibleConstructorReturn(this, (IndexPage.__proto__ || Object.getPrototypeOf(IndexPage)).call(this, props));
 
     _this.state = {
-      collapse: true
+      collapse: true,
+      login: false
     };
+    _this.loginClick = _this.loginClick.bind(_this);
     return _this;
   }
 
@@ -57,42 +57,59 @@ var IndexPage = function (_Component) {
       });
     }
   }, {
+    key: 'loginClick',
+    value: function loginClick(values) {
+      console.log(values);
+      this.setState({ login: true });
+    }
+  }, {
     key: 'render',
     value: function render() {
       var collapse = this.state.collapse;
       var config = this.props.configText || _extends({}, configText);
+      var loginProps = _extends({}, config, {
+        loginClick: this.loginClick
+      });
       return _react2.default.createElement(
         'div',
-        { className: 'zoe-react-component-layout' },
-        _react2.default.createElement(_.Header, { config: config }),
-        _react2.default.createElement(
+        null,
+        this.state.login ? _react2.default.createElement(
           'div',
-          { className: collapse ? ["zoe-react-component-layout-aside", "zoe-react-component-layout-aside-collapse"].join(" ") : "zoe-react-component-layout-aside" },
-          _react2.default.createElement(
-            'aside',
-            { className: 'zoe-react-component-layout-sider' },
-            _react2.default.createElement(_.Sider, { collapse: collapse, menu: this.props.menu }),
-            _react2.default.createElement(
-              'div',
-              { className: 'zoe-react-component-aside-action', onClick: this.onCollapseChange.bind(this) },
-              collapse ? _react2.default.createElement(_antd.Icon, { type: 'right' }) : _react2.default.createElement(_antd.Icon, { type: 'left' })
-            )
-          ),
+          { className: 'zoe-react-component-layout' },
+          _react2.default.createElement(_.Header, { config: config }),
           _react2.default.createElement(
             'div',
-            { className: 'zoe-react-component-layout-main' },
+            { className: collapse ? ["zoe-react-component-layout-aside", "zoe-react-component-layout-aside-collapse"].join(" ") : "zoe-react-component-layout-aside" },
             _react2.default.createElement(
-              'div',
-              { className: 'zoe-react-component-layout-container' },
-              _react2.default.createElement(_.Bread, { location: this.props.location, menu: this.props.menu }),
+              'aside',
+              { className: 'zoe-react-component-layout-sider' },
+              _react2.default.createElement(_.Sider, { collapse: collapse, menu: this.props.menu }),
               _react2.default.createElement(
                 'div',
-                { className: 'zoe-react-component-layout-content' },
-                this.props.children
+                { className: 'zoe-react-component-aside-action', onClick: this.onCollapseChange.bind(this) },
+                collapse ? _react2.default.createElement(_antd.Icon, { type: 'right' }) : _react2.default.createElement(_antd.Icon, { type: 'left' })
               )
             ),
-            _react2.default.createElement(_.Footer, { config: config })
+            _react2.default.createElement(
+              'div',
+              { className: 'zoe-react-component-layout-main' },
+              _react2.default.createElement(
+                'div',
+                { className: 'zoe-react-component-layout-container' },
+                _react2.default.createElement(_.Bread, { location: this.props.location, menu: this.props.menu }),
+                _react2.default.createElement(
+                  'div',
+                  { className: 'zoe-react-component-layout-content' },
+                  this.props.children
+                )
+              ),
+              _react2.default.createElement(_.Footer, { config: config })
+            )
           )
+        ) : _react2.default.createElement(
+          'div',
+          null,
+          _react2.default.createElement(_.Login, loginProps)
         )
       );
     }

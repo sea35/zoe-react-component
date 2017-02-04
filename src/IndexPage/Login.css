@@ -1,0 +1,63 @@
+.zoe-react-component-login-content{
+    min-height: calc(100vh - 130px);
+    align-items: center;
+    display: flex;
+    justify-content:center;
+}
+.zoe-react-component-login-content-layout{
+    width: 850px;
+    height: 320px;
+    margin: 12px 0
+}
+.zoe-react-component-login-content-left{
+    width: 500px;
+    height: 320px;
+    box-shadow: 0 0 100px rgba(0, 0, 0, .08);
+    float:left;
+}
+.zoe-react-component-login-content-right{
+    width: 320px;
+    height: 320px;
+    padding: 36px;
+    box-shadow: 0 0 100px rgba(0, 0, 0, .08);
+    background: #fff;
+    min-height: 280px;
+    float: right;
+}
+
+.zoe-react-component-login-content-right button {
+    width: 100%;
+}
+
+.zoe-react-component-login-content-right  p {
+    color: rgb(204, 204, 204);
+    text-align: center;
+    margin-top: 16px;
+}
+.zoe-react-component-login-content-right span:first-child {
+    margin-right: 16px;
+}
+
+
+.zoe-react-component-login {
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    cursor: pointer;
+    margin-bottom: 24px;
+}
+.zoe-react-component-login img {
+    width: 60px;
+    margin-right: 8px;
+}
+
+.zoe-react-component-login span {
+    vertical-align: text-bottom;
+    font-size: 16px;
+    text-transform: uppercase;
+    display: inline-block;
+}
+.ant-spin-container,
+.ant-spin-nested-loading {
+    height: 100%;
+}

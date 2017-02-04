@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import {Icon} from 'antd';
-import {Header, Sider, Bread, Footer} from "./";
-import styles from './IndexPage.css';
+import {Icon,Spin} from 'antd';
+import {Header, Sider, Bread, Footer,Login} from "./";
+import './IndexPage.css';
 
 const configText ={
     name: 'ZOE OPS',
@@ -13,8 +13,10 @@ class IndexPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      collapse: true
+      collapse: true,
+      login:false
     }
+    this.loginClick=this.loginClick.bind(this);
   }
 
   onCollapseChange() {
@@ -22,11 +24,19 @@ class IndexPage extends Component {
       collapse: !this.state.collapse,
     })
   }
-
+  loginClick(values){
+      console.log(values);
+     this.setState({login:true});
+  }
   render() {
     const collapse = this.state.collapse;
     const config = this.props.configText || {...configText};
+    const loginProps={
+        ...config,
+        loginClick:this.loginClick
+    }
     return (
+        <div>{this.state.login?
       <div className="zoe-react-component-layout">
         <Header config={config}/>
         <div className={collapse ? ["zoe-react-component-layout-aside","zoe-react-component-layout-aside-collapse"].join(" ") : "zoe-react-component-layout-aside"}>
@@ -47,10 +57,13 @@ class IndexPage extends Component {
           </div>
         </div>
       </div>
+      :<div><Login {...loginProps}/></div>}</div>
     );
   }
 }
 
-IndexPage.propTypes = {};
+IndexPage.propTypes = {
+
+};
 
 export default IndexPage;
